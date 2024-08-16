@@ -1,20 +1,15 @@
+// frontend/src/pages/HomePage.js
+
 import React, { useState, useEffect, useContext } from 'react';
 import { Container, Typography, Grid } from '@mui/material';
 import { AuthContext } from '../contexts/AuthContext';
 import ProductList from '../components/ProductList';
+import ProductManagement from '../components/ProductManagement';
 import { getAllProducts } from '../services/product';
-import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (user && user.role === 'super_admin') {
-      navigate('/admin');
-    }
-  }, [user, navigate]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -35,12 +30,18 @@ const HomePage = () => {
           Hello, {user.email}!
         </Typography>
       )}
-      <Typography variant="h4" component="h1" gutterBottom>
-        Our Products
-      </Typography>
-      <Grid container spacing={3}>
-        <ProductList products={products} />
-      </Grid>
+      {user && user.role === 'super_admin' ? (
+        <ProductManagement />
+      ) : (
+        <>
+          <Typography variant="h4" component="h1" gutterBottom>
+            Our Products
+          </Typography>
+          <Grid container spacing={3}>
+            <ProductList products={products} />
+          </Grid>
+        </>
+      )}
     </Container>
   );
 };

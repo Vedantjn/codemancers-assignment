@@ -39,12 +39,12 @@ export const AuthProvider = ({ children }) => {
 
   const loginUser = async (email, password) => {
     try {
-      const response = await apiLogin(email, password); // Use the imported apiLogin function
-      const { token } = response.data;
+      const response = await apiLogin(email, password);
+      const { token, email: userEmail, role } = response.data;
       localStorage.setItem('token', token);
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       api.defaults.headers.common['x-auth-token'] = token;
-      await fetchCurrentUser();
+      setUser({ email: userEmail, role }); // Set the user object with email and role
     } catch (error) {
       console.error('Login error:', error);
     }
