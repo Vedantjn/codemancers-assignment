@@ -10,8 +10,11 @@ export const getProductById = (id) => {
 };
 
 export const createProduct = (productData) => {
-  console.log('Sending product data:', productData);
-  return api.post('/products', productData);
+  return api.post('/products', productData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
 };
 
 export const updateProduct = (id, productData) => {
