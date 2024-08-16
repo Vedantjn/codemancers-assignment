@@ -32,17 +32,17 @@ const Navbar = () => {
         {user ? (
           <>
             {user.role === 'super_admin' && (
-              <StyledLink to="/admin">Admin Dashboard</StyledLink>
+              <StyledLink to="/">Admin Dashboard</StyledLink>
             )}
-            <StyledLink to="/cart">CART</StyledLink>
+            <StyledLink to="/cart">Cart</StyledLink>
             <StyledLink as="button" onClick={logoutUser}>
-              LOGOUT
+              Logout
             </StyledLink>
           </>
         ) : (
           <>
-            <StyledLink to="/login">LOGIN</StyledLink>
-            <StyledLink to="/register">REGISTER</StyledLink>
+            <StyledLink to="/login">Login</StyledLink>
+            <StyledLink to="/register">Register</StyledLink>
           </>
         )}
       </div>

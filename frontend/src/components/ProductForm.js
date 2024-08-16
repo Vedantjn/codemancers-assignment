@@ -1,40 +1,10 @@
+// frontend/src/components/ProductForm.js
+
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { TextField, Button, Typography } from '@mui/material';
 import { createProduct, updateProduct } from '../services/product';
 
-const FormContainer = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-`;
-
-const StyledInput = styled.input`
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-`;
-
-const StyledButton = styled.button`
-  padding: 12px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 16px;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
-
-const ProductForm = ({ product, onSubmit }) => {
+const ProductForm = ({ product, onSubmit, onCancel }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
@@ -59,7 +29,7 @@ const ProductForm = ({ product, onSubmit }) => {
     }
 
     try {
-      if (product._id) {
+      if (product && product._id) {
         await updateProduct(product._id, formData);
       } else {
         await createProduct(formData);
@@ -71,37 +41,49 @@ const ProductForm = ({ product, onSubmit }) => {
   };
 
   return (
-    <FormContainer onSubmit={handleSubmit}>
-      <StyledInput
-        type="text"
-        placeholder="Title"
+    <form onSubmit={handleSubmit}>
+      <Typography variant="h6" gutterBottom>
+        {product && product._id ? 'Edit Product' : 'Add New Product'}
+      </Typography>
+      <TextField
+        label="Title"
+        fullWidth
+        margin="normal"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
       />
-      <StyledInput
-        type="text"
-        placeholder="Description"
+      <TextField
+        label="Description"
+        fullWidth
+        margin="normal"
+        multiline
+        rows={4}
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         required
       />
-      <StyledInput
+      <TextField
+        label="Price"
+        fullWidth
+        margin="normal"
         type="number"
-        placeholder="Price"
         value={price}
         onChange={(e) => setPrice(e.target.value)}
         required
       />
-      <StyledInput
+      <input
         accept="image/*"
         type="file"
         onChange={(e) => setImage(e.target.files[0])}
       />
-      <StyledButton type="submit">
-        {product._id ? 'Update Product' : 'Create Product'}
-      </StyledButton>
-    </FormContainer>
+      <Button type="submit" variant="contained" color="primary" style={{ marginTop: '20px', marginRight: '10px' }}>
+        {product && product._id ? 'Update Product' : 'Add Product'}
+      </Button>
+      <Button variant="contained" color="secondary" onClick={onCancel} style={{ marginTop: '20px' }}>
+        Cancel
+      </Button>
+    </form>
   );
 };
 
