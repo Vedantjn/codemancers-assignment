@@ -2,8 +2,19 @@ const Product = require('../models/Product');
 
 exports.createProduct = async (req, res) => {
   try {
+    console.log('Received product data:', req.body);
+    console.log('Received file:', req.file);
+
     const { title, description, price } = req.body;
     const image = req.file ? req.file.path : null;
+
+    if (!title || !description || !price) {
+      return res.status(400).json({ message: 'Title, description, and price are required' });
+    }
+
+    if (!image) {
+      return res.status(400).json({ message: 'Image is required' });
+    }
 
     const product = new Product({
       title,
@@ -15,8 +26,8 @@ exports.createProduct = async (req, res) => {
     await product.save();
     res.status(201).json(product);
   } catch (error) {
-    console.error(error.message);
-    res.status(500).send('Server error');
+    console.error('Error creating product:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
 

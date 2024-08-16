@@ -18,27 +18,39 @@ const ProductForm = ({ product, onSubmit, onCancel }) => {
     }
   }, [product]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('description', description);
-    formData.append('price', price);
-    if (image) {
-      formData.append('image', image);
-    }
 
-    try {
-      if (product && product._id) {
-        await updateProduct(product._id, formData);
-      } else {
-        await createProduct(formData);
-      }
-      onSubmit();
-    } catch (error) {
-      console.error('Error submitting product:', error);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const formData = new FormData();
+  formData.append('title', title);
+  formData.append('description', description);
+  formData.append('price', price);
+  if (image) {
+    formData.append('image', image);
+  }
+
+  console.log('Form data:', {
+    title,
+    description,
+    price,
+    image: image ? image.name : 'No image'
+  });
+
+  try {
+    if (product && product._id) {
+      await updateProduct(product._id, formData);
+    } else {
+      const response = await createProduct(formData);
+      console.log('Create product response:', response);
     }
-  };
+    onSubmit();
+  } catch (error) {
+    console.error('Error submitting product:', error);
+    if (error.response) {
+      console.error('Error response:', error.response.data);
+    }
+  }
+};
 
   return (
     <form onSubmit={handleSubmit}>

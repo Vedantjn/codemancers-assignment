@@ -10,6 +10,7 @@ export const getProductById = (id) => {
 };
 
 export const createProduct = (productData) => {
+  console.log('Sending product data:', productData);
   return api.post('/products', productData);
 };
 
