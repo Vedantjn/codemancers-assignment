@@ -6,6 +6,11 @@ import { AuthContext } from '../contexts/AuthContext';
 import ProductList from '../components/ProductList';
 import ProductManagement from '../components/ProductManagement';
 import { getAllProducts } from '../services/product';
+import styled from 'styled-components';
+
+const PageContainer = styled(Container)`
+  margin-top: 2rem;
+`;
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -24,6 +29,8 @@ const HomePage = () => {
   }, []);
 
   return (
+    <PageContainer>
+
     <Container>
       {user && (
         <Typography variant="h5" component="h2" gutterBottom>
@@ -43,6 +50,7 @@ const HomePage = () => {
         </>
       )}
     </Container>
+          </PageContainer>
   );
 };
 

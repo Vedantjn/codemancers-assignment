@@ -3,49 +3,56 @@ import { useNavigate } from 'react-router-dom';
 import { addToCart } from '../services/cart';
 import styled from 'styled-components';
 
-const StyledGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
+const ProductGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 `;
 
-const StyledCard = styled.div`
-  width: 300px;
+const ProductCard = styled.div`
   border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
 `;
 
-const StyledCardMedia = styled.img`
+const ProductImage = styled.img`
   width: 100%;
-  height: 140px;
+  height: 200px;
   object-fit: cover;
-`;
-
-const StyledCardContent = styled.div`
-  padding: 16px;
-`;
-
-const StyledTypography = styled.h5`
-  margin: 0;
-  font-size: 1.25rem;
-  color: #333;
-`;
-
-const StyledButton = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
   border-radius: 4px;
-  cursor: pointer;
-  margin-top: 16px;
+  margin-bottom: 10px;
+`;
 
+const ProductTitle = styled.h3`
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+`;
+
+const ProductDescription = styled.p`
+  margin: 0 0 10px 0;
+  font-size: 0.9em;
+  color: #666;
+`;
+
+const ProductPrice = styled.p`
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  font-size: 1.2em;
+`;
+
+const AddToCartButton = styled.button`
+  background-color: #f0c14b;
+  border: 1px solid #a88734;
+  border-radius: 3px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
   &:hover {
-    background-color: #0056b3;
+    background-color: #ddb347;
   }
 `;
 
@@ -62,24 +69,19 @@ const ProductList = ({ products }) => {
   };
 
   return (
-    <StyledGrid>
+    <ProductGrid>
       {products.map((product) => (
-        <StyledCard key={product._id}>
-          <StyledCardMedia
-            src={`http://localhost:5000/${product.image}`}
-            alt={product.title}
-          />
-          <StyledCardContent>
-            <StyledTypography>{product.title}</StyledTypography>
-            <p>{product.description}</p>
-            <h6>₹{product.price}</h6>
-            <StyledButton onClick={() => handleAddToCart(product._id)}>
-              Add to Cart
-            </StyledButton>
-          </StyledCardContent>
-        </StyledCard>
+        <ProductCard key={product._id}>
+          <ProductImage src={`http://localhost:5000/${product.image}`} alt={product.title} />
+          <ProductTitle>{product.title}</ProductTitle>
+          <ProductDescription>{product.description}</ProductDescription>
+          <ProductPrice>₹{product.price}</ProductPrice>
+          <AddToCartButton onClick={() => handleAddToCart(product._id)}>
+            Add to Cart
+          </AddToCartButton>
+        </ProductCard>
       ))}
-    </StyledGrid>
+    </ProductGrid>
   );
 };
 

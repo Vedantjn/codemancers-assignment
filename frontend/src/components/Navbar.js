@@ -12,14 +12,14 @@ const Nav = styled.nav`
   color: white;
 `;
 
-const NavLink = styled(Link)`
-  color: white;
-  text-decoration: none;
-  margin-left: 16px;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
+// const NavLink = styled(Link)`
+//   color: white;
+//   text-decoration: none;
+//   margin-left: 16px;
+//   &:hover {
+//     text-decoration: underline;
+//   }
+// `;
 
 const LogoutButton = styled.button`
   background: none;
