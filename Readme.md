@@ -1,4 +1,4 @@
-# FOODIEDELIGHT Restaurant Management
+# Nodejs Ecommerce Application
 
 Nodejs ecommerce application
 
