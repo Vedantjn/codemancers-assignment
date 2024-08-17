@@ -4,30 +4,30 @@ NodeJS Ecommerce Project Assignment
 
 Here are some screenshots of the application:
 
-![Home Page](./frontend/images/1.png)
+![Home Page](./frontend/public/images/1.png)
 
-![Login Page](./frontend/images/2.png)
+![Login Page](./frontend/public/images/2.png)
 
-![Cart Items](./frontend/images/3.png)
+![Cart Items](./frontend/public/images/3.png)
 
-![Checkout Page](./frontend/images/4.png)
+![Checkout Page](./frontend/public/images/4.png)
 
-![Order successfully placed toast](./frontend/images/5.png)
+![Order successfully placed toast](./frontend/public/images/5.png)
 
-![Received order confirmation](./frontend/images/6.png)
+![Received order confirmation](./frontend/public/images/6.png)
 
-![Logged in as Admin](./frontend/images/7.png)
+![Logged in as Admin](./frontend/public/images/7.png)
 
-![Edit Product](./frontend/images/8.png)
+![Edit Product](./frontend/public/images/8.png)
 
-![Add new Product](./frontend/images/9.png)
+![Add new Product](./frontend/public/images/9.png)
 
-![New Product added](./frontend/images/10.png)
+![New Product added](./frontend/public/images/10.png)
 
 
 ## Introduction
 
-The "FOODIEDELIGHT" application is a food delivery platform that allows users to manage different restaurants and their menus. This project focuses on the frontend development of the restaurant management module, including functionalities to:
+The "FOODIEDELIGHT" application is a food delivery platform that allows users to manage different restaurants and their menus. This project focuses on the frontend/public development of the restaurant management module, including functionalities to:
 
 - Add a new restaurant to the platform
 - Modify a restaurant's details
