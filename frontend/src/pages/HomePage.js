@@ -1,15 +1,18 @@
-// frontend/src/pages/HomePage.js
-
 import React, { useState, useEffect, useContext } from 'react';
-import { Container, Typography, Grid } from '@mui/material';
+import styled from 'styled-components';
 import { AuthContext } from '../contexts/AuthContext';
 import ProductList from '../components/ProductList';
 import ProductManagement from '../components/ProductManagement';
 import { getAllProducts } from '../services/product';
-import styled from 'styled-components';
 
-const PageContainer = styled(Container)`
-  margin-top: 2rem;
+const PageContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+`;
+
+const WelcomeMessage = styled.h2`
+  margin-bottom: 20px;
 `;
 
 const HomePage = () => {
@@ -30,27 +33,18 @@ const HomePage = () => {
 
   return (
     <PageContainer>
-
-    <Container>
       {user && (
-        <Typography variant="h5" component="h2" gutterBottom>
-          Hello, {user.email}!
-        </Typography>
+        <WelcomeMessage>Hello, {user.email}!</WelcomeMessage>
       )}
       {user && user.role === 'super_admin' ? (
         <ProductManagement />
       ) : (
         <>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Our Products
-          </Typography>
-          <Grid container spacing={3}>
-            <ProductList products={products} />
-          </Grid>
+          <h1>Our Products</h1>
+          <ProductList products={products} />
         </>
       )}
-    </Container>
-          </PageContainer>
+    </PageContainer>
   );
 };
 
