@@ -4,25 +4,25 @@ NodeJS Ecommerce Project Assignment
 
 Here are some screenshots of the application:
 
-![Home Page](./frontend/public/images/1.png)
+![Home Page](./frontend/public/screenshots/1.png)
 
-![Login Page](./frontend/public/images/2.png)
+![Login Page](./frontend/public/screenshots/2.png)
 
-![Cart Items](./frontend/public/images/3.png)
+![Cart Items](./frontend/public/screenshots/3.png)
 
-![Checkout Page](./frontend/public/images/4.png)
+![Checkout Page](./frontend/public/screenshots/4.png)
 
-![Order successfully placed toast](./frontend/public/images/5.png)
+![Order successfully placed toast](./frontend/public/screenshots/5.png)
 
-![Received order confirmation](./frontend/public/images/6.png)
+![Received order confirmation](./frontend/public/screenshots/6.png)
 
-![Logged in as Admin](./frontend/public/images/7.png)
+![Logged in as Admin](./frontend/public/screenshots/7.png)
 
-![Edit Product](./frontend/public/images/8.png)
+![Edit Product](./frontend/public/screenshots/8.png)
 
-![Add new Product](./frontend/public/images/9.png)
+![Add new Product](./frontend/public/screenshots/9.png)
 
-![New Product added](./frontend/public/images/10.png)
+![New Product added](./frontend/public/screenshots/10.png)
 
 
 ## Introduction
@@ -54,4 +54,4 @@ The application utilizes React, Styled Components, and other related libraries t
 - Responsive Design: The application is designed to be responsive and accessible on various devices.
 - Input Validation: Includes input validation to ensure data integrity.
 - Error Handling: Handles errors and provides appropriate feedback to the user.
-- Image Uploading: Users can upload images for each restaurant, which are displayed in a carousel.
+- Image Uploading: Users can upload screenshots for each restaurant, which are displayed in a carousel.
