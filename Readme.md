@@ -4,20 +4,25 @@ NodeJS Ecommerce Project Assignment
 
 Here are some screenshots of the application:
 
-
- Deployed link: https://thinkbridge-assignment.vercel.app/
-
 ![Home Page](./public/images/1.png)
 
-![View Restaurant / Add Restaurants](./public/images/2.png)
+![Login Page](./public/images/2.png)
 
-![Add Restaurant form](./public/images/3.png)
+![Cart Items](./public/images/3.png)
 
-![New Restaurant added](./public/images/4.png)
+![Checkout Page](./public/images/4.png)
 
-![New Restaurant edited](./public/images/5.png)
+![Order successfully placed toast](./public/images/5.png)
 
-![New Restaurant deleted](./public/images/6.png)
+![Received order confirmation](./public/images/6.png)
+
+![Logged in as Admin](./public/images/7.png)
+
+![Edit Product](./public/images/8.png)
+
+![Add new Product](./public/images/9.png)
+
+![New Product added](./public/images/10.png)
 
 
 ## Introduction
