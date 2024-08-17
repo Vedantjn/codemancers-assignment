@@ -4,25 +4,25 @@ NodeJS Ecommerce Project Assignment
 
 Here are some screenshots of the application:
 
-![Home Page](./public/images/1.png)
+![Home Page](./frontend/images/1.png)
 
-![Login Page](./public/images/2.png)
+![Login Page](./frontend/images/2.png)
 
-![Cart Items](./public/images/3.png)
+![Cart Items](./frontend/images/3.png)
 
-![Checkout Page](./public/images/4.png)
+![Checkout Page](./frontend/images/4.png)
 
-![Order successfully placed toast](./public/images/5.png)
+![Order successfully placed toast](./frontend/images/5.png)
 
-![Received order confirmation](./public/images/6.png)
+![Received order confirmation](./frontend/images/6.png)
 
-![Logged in as Admin](./public/images/7.png)
+![Logged in as Admin](./frontend/images/7.png)
 
-![Edit Product](./public/images/8.png)
+![Edit Product](./frontend/images/8.png)
 
-![Add new Product](./public/images/9.png)
+![Add new Product](./frontend/images/9.png)
 
-![New Product added](./public/images/10.png)
+![New Product added](./frontend/images/10.png)
 
 
 ## Introduction
