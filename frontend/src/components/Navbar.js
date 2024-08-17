@@ -12,6 +12,27 @@ const Nav = styled.nav`
   color: white;
 `;
 
+const NavLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+  margin-left: 16px;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+const LogoutButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 16px;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
@@ -36,9 +57,9 @@ const Navbar = () => {
             ) : (
               <StyledLink to="/cart">Cart</StyledLink>
             )}
-            <StyledLink as="button" onClick={logoutUser}>
-              Logout
-            </StyledLink>
+            <LogoutButton onClick={logoutUser}>Logout</LogoutButton>
+
+
           </>
         ) : (
           <>
