@@ -31,10 +31,11 @@ const Navbar = () => {
       <div>
         {user ? (
           <>
-            {user.role === 'super_admin' && (
-              <StyledLink to="/">Admin Dashboard</StyledLink>
+            {user.role === 'super_admin' ? (
+              <StyledLink to="/admin">Admin Dashboard</StyledLink>
+            ) : (
+              <StyledLink to="/cart">Cart</StyledLink>
             )}
-            <StyledLink to="/cart">Cart</StyledLink>
             <StyledLink as="button" onClick={logoutUser}>
               Logout
             </StyledLink>
