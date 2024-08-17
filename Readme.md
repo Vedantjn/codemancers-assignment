@@ -35,8 +35,8 @@ This project is a full-stack eCommerce application built using Node.js, Express.
 2. Ensure you have Node.js installed (version 14 or higher recommended).
 3. Run `npm install` to install dependencies in both frontend and backend folders.
 4. Frontend's .env: 
--REACT_APP_API_URL=https://codemancers-assignment-74xb.onrender.com
--Backend's .env: 
+- REACT_APP_API_URL=https://codemancers-assignment-74xb.onrender.com
+- Backend's .env: 
 MONGO_URI=mongodb+srv://vedantjain:codemancerspasswords@cluster0.x8jbr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 JWT_SECRET=ankjdnkjadnfakjsdfnskdjfn
 EMAIL_USER=
